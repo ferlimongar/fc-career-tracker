@@ -41,23 +41,23 @@ export default function EditPlayerModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-      <div className="w-[95%] max-w-3xl rounded-2xl bg-[#1B2028] p-8 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-4 md:items-center md:p-6">
+      <div className="my-auto max-h-[calc(100dvh-2rem)] w-full max-w-3xl overflow-y-auto rounded-2xl bg-[#1B2028] p-5 shadow-2xl md:p-8">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-3xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-white md:text-3xl">
             Edit Player
           </h2>
 
           <button
             onClick={onClose}
-            className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+            className="rounded-lg bg-red-600 px-3 py-2 text-sm text-white hover:bg-red-700 md:px-4"
           >
             Close
           </button>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-5">
 
           {/* Name */}
           <div>
@@ -70,7 +70,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayer("name", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -86,7 +86,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayer("overall", Number(e.target.value))
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -98,7 +98,7 @@ export default function EditPlayerModal({
 
             <select
               value={player.club}
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
               onChange={(e) => {
                 const club = clubs.find(
                   (c) => c.name === e.target.value
@@ -135,7 +135,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayer("position", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             >
               <option>GK</option>
               <option>LB</option>
@@ -161,7 +161,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayerInfo("height", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -177,7 +177,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayerInfo("age", Number(e.target.value))
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -193,7 +193,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayerInfo("shirt", Number(e.target.value))
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -208,7 +208,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayerInfo("foot", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             >
               <option>Right</option>
               <option>Left</option>
@@ -226,7 +226,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updatePlayerInfo("value", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -241,7 +241,7 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updateClubInfo("joined", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
@@ -256,16 +256,16 @@ export default function EditPlayerModal({
               onChange={(e) =>
                 updateClubInfo("contract", e.target.value)
               }
-              className="w-full rounded bg-[#0F1318] p-3"
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
             />
           </div>
 
         </div>
 
-        <div className="mt-8 flex justify-end">
+        <div className="mt-6 flex justify-end md:mt-8">
           <button
             onClick={onClose}
-            className="rounded-lg bg-[#2BA13D] px-6 py-3 font-semibold text-white hover:bg-[#248C35]"
+            className="rounded-lg bg-[#2BA13D] px-5 py-2.5 font-semibold text-white hover:bg-[#248C35] md:px-6 md:py-3"
           >
             Save Changes
           </button>

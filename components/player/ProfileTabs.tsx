@@ -42,14 +42,14 @@ export default function ProfileTabs({
 
 
       {/* TAB BUTTONS */}
-        <div className="flex gap-3 overflow-x-auto border-b border-[#2C323D] whitespace-nowrap">
+        <div className="grid grid-cols-5 border-b border-[#2C323D] md:flex md:gap-3">
 
         {tabs.map((tab) => (
 
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-3 font-medium whitespace-nowrap ${
+            className={`min-w-0 px-1 py-2 text-center text-[10px] font-medium whitespace-nowrap sm:text-xs md:px-4 md:py-3 md:text-base ${
               activeTab === tab
                 ? "text-[#2BA13D] border-b-2 border-[#2BA13D]"
                 : "text-[#A0A7B4]"

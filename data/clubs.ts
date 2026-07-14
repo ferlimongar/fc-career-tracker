@@ -41,4 +41,16 @@ export const clubs = [
     league: "Superliga",
     country: "Denmark",
   },
+  {
+    name: "Beyer Leverkusen",
+    crest: "/clubs/leverkusen.png",
+    league: "Bundesliga",
+    country: "Germany",
+  },
+  {
+    name: "AC Milan",
+    crest: "/clubs/milan.png",
+    league: "Serie A",
+    country: "Italy",
+  },
 ];

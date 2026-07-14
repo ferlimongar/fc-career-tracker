@@ -94,13 +94,13 @@ useEffect(() => {
     <main className="min-h-screen bg-[#0B0D10] p-4 md:p-10 text-white">
 
       {/* PLAYER HEADER */}
-      <section className="rounded-xl bg-[#1B2028] p-8">
+      <section className="rounded-xl bg-[#1B2028] p-3 md:p-8">
 
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-6">
 
 
           {/* LEFT SIDE */}
-          <div className="flex items-center gap-6">
+          <div className="flex min-w-0 flex-1 items-center gap-2 md:gap-6">
 
 
             <Image
@@ -108,14 +108,14 @@ useEffect(() => {
             alt={playerData.club}
             width={90}
             height={90}
-            className="h-[70px] w-[70px] md:h-[90px] md:w-[90px]"
+            className="h-10 w-10 flex-shrink-0 md:h-[90px] md:w-[90px]"
 />
 
 
-            <div>
+            <div className="min-w-0">
 
 
-              <div className="flex items-center gap-3">
+              <div className="flex min-w-0 items-center gap-1.5 md:gap-3">
 
 
                 <Image
@@ -123,10 +123,11 @@ useEffect(() => {
                   alt={playerData.nationality}
                   width={30}
                   height={20}
+                  className="h-auto w-4 flex-shrink-0 md:w-[30px]"
                 />
 
 
-                <h1 className="text-3xl md:text-5xl font-bold">
+                <h1 className="truncate text-lg font-bold leading-tight md:text-5xl">
                   {playerData.name}
                 </h1>
 
@@ -134,12 +135,12 @@ useEffect(() => {
               </div>
 
 
-              <p className="mt-2 text-xl text-[#A0A7B4]">
+              <p className="mt-0.5 truncate text-xs text-[#A0A7B4] md:mt-2 md:text-xl">
                 {playerData.position} • {playerData.club}
               </p>
 
 
-              <div className="mt-5 grid grid-cols-2 gap-4 text-[#A0A7B4] md:flex md:gap-8">
+              <div className="mt-5 hidden text-[#A0A7B4] md:flex md:gap-8">
 
 
                 <div>
@@ -209,15 +210,15 @@ useEffect(() => {
 
 
           {/* OVERALL */}
-          <div className="flex h-24 w-24 md:h-28 md:w-28 flex-col items-center justify-center self-center">
+          <div className="flex h-11 w-11 flex-shrink-0 flex-col items-center justify-center md:h-28 md:w-28">
 
 
-            <p className="text-5xl font-bold text-[#2BA13D]">
+            <p className="text-2xl font-bold leading-none text-[#2BA13D] md:text-5xl">
               {playerData.overall}
             </p>
 
 
-            <p className="text-sm tracking-widest text-[#A0A7B4]">
+            <p className="mt-0.5 text-[9px] tracking-widest text-[#A0A7B4] md:text-sm">
               OVR
             </p>
 
@@ -244,7 +245,7 @@ useEffect(() => {
 
 
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+        <div className="grid grid-cols-5 gap-2 md:gap-4">
 
 
           <StatCard
@@ -311,15 +312,15 @@ function StatCard({
 
   return (
 
-    <div className="rounded-xl bg-[#1B2028] p-5 text-center">
+    <div className="rounded-xl bg-[#1B2028] p-2 text-center md:p-5">
 
 
-      <p className="text-3xl font-bold">
+      <p className="text-lg font-bold md:text-3xl">
         {value}
       </p>
 
 
-      <p className="mt-1 text-sm text-[#A0A7B4]">
+      <p className="mt-0.5 text-[10px] text-[#A0A7B4] md:mt-1 md:text-sm">
         {label}
       </p>
 

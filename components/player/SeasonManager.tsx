@@ -146,17 +146,17 @@ export default function SeasonManager({
 
           <div
             key={index}
-            className="rounded-xl bg-[#1B2028] p-6"
+            className="rounded-xl bg-[#1B2028] p-4 md:p-6"
           >
 
 
-            <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-start">
+            <div className="flex items-start justify-between gap-3">
 
 
-              <div className="flex gap-5">
+              <div className="flex min-w-0 flex-1 gap-3 md:gap-5">
 
 
-                <div className="h-[70px] w-[70px] flex-shrink-0">
+                <div className="h-12 w-12 flex-shrink-0 md:h-[70px] md:w-[70px]">
 
 
                   {season.clubCrest && (
@@ -177,36 +177,36 @@ export default function SeasonManager({
 
 
 
-                <div>
+                <div className="min-w-0 flex-1">
 
 
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-lg font-bold text-white md:text-2xl">
                     {season.year}
                   </h3>
 
 
-                  <p className="font-medium text-white">
+                  <p className="truncate text-sm font-medium text-white md:text-base">
                     {season.club}
                   </p>
 
 
-                  <p className="text-[#A0A7B4]">
+                  <p className="truncate text-xs text-[#A0A7B4] md:text-base">
                     {season.league}
                   </p>
 
 
 
 
-                  <div className="mt-5 flex flex-wrap gap-3">
+                  <div className="mt-4 grid grid-cols-4 gap-2 md:mt-5 md:flex md:flex-wrap md:gap-3">
 
 
-                    <div className="rounded-full bg-[#0F1318] px-4 py-2">
+                    <div className="flex flex-col items-center rounded-lg bg-[#0F1318] px-2 py-1.5 text-center md:block md:rounded-full md:px-4 md:py-2">
 
-                      <span className="text-2xl font-bold">
+                      <span className="text-base font-bold md:text-2xl">
                         {season.matches}
                       </span>
 
-                      <span className="ml-2 text-[#A0A7B4]">
+                      <span className="text-[10px] text-[#A0A7B4] md:ml-2 md:text-base">
                         Apps
                       </span>
 
@@ -214,13 +214,13 @@ export default function SeasonManager({
 
 
 
-                    <div className="rounded-full bg-[#0F1318] px-4 py-2">
+                    <div className="flex flex-col items-center rounded-lg bg-[#0F1318] px-2 py-1.5 text-center md:block md:rounded-full md:px-4 md:py-2">
 
-                      <span className="text-2xl font-bold">
+                      <span className="text-base font-bold md:text-2xl">
                         {season.goals}
                       </span>
 
-                      <span className="ml-2 text-[#A0A7B4]">
+                      <span className="text-[10px] text-[#A0A7B4] md:ml-2 md:text-base">
                         Goals
                       </span>
 
@@ -229,13 +229,13 @@ export default function SeasonManager({
 
 
 
-                    <div className="rounded-full bg-[#0F1318] px-4 py-2">
+                    <div className="flex flex-col items-center rounded-lg bg-[#0F1318] px-2 py-1.5 text-center md:block md:rounded-full md:px-4 md:py-2">
 
-                      <span className="text-2xl font-bold">
+                      <span className="text-base font-bold md:text-2xl">
                         {season.assists}
                       </span>
 
-                      <span className="ml-2 text-[#A0A7B4]">
+                      <span className="text-[10px] text-[#A0A7B4] md:ml-2 md:text-base">
                         Assists
                       </span>
 
@@ -244,11 +244,11 @@ export default function SeasonManager({
 
 
 
-                    <div className="rounded-full bg-[#0F1318] px-4 py-2">
+                    <div className="flex flex-col items-center rounded-lg bg-[#0F1318] px-2 py-1.5 text-center md:block md:rounded-full md:px-4 md:py-2">
 
                       ⭐
 
-                      <span className="text-2xl font-bold">
+                      <span className="text-base font-bold md:text-2xl">
                         {season.rating}
                       </span>
 
@@ -261,14 +261,14 @@ export default function SeasonManager({
 
                   {seasonTrophies.length > 0 && (
 
-                    <div className="mt-5 flex flex-wrap gap-2">
+                    <div className="mt-4 flex flex-wrap gap-2 md:mt-5">
 
 
                       {seasonTrophies.map((trophy) => (
 
                         <span
                           key={trophy}
-                          className="rounded-full bg-[#0F1318] px-3 py-1 text-sm text-white"
+                          className="rounded-full bg-[#0F1318] px-2 py-1 text-xs text-white md:px-3 md:text-sm"
                         >
                           🏆 {trophy}
                         </span>
@@ -306,7 +306,7 @@ export default function SeasonManager({
 
                 }}
 
-                className="rounded-md bg-[#2BA13D] px-3 py-1 text-sm font-medium text-white hover:bg-[#248C35]"
+                className="flex-shrink-0 rounded-md bg-[#2BA13D] px-2 py-1 text-xs font-medium text-white hover:bg-[#248C35] md:px-3 md:text-sm"
 
               >
 
@@ -331,7 +331,26 @@ export default function SeasonManager({
 
       {showForm && (
 
-        <div className="rounded-xl bg-[#0F1318] p-6 space-y-4">
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-4 md:items-center md:p-6">
+
+          <div className="my-auto max-h-[calc(100dvh-2rem)] w-full max-w-3xl overflow-y-auto rounded-2xl bg-[#1B2028] p-4 shadow-2xl md:p-8">
+
+            <div className="mb-4 flex items-center justify-between md:mb-6">
+
+              <h2 className="text-xl font-bold text-white md:text-3xl">
+                {editingIndex !== null ? "Edit Season" : "Add Season"}
+              </h2>
+
+              <button
+                onClick={resetForm}
+                className="rounded-lg bg-red-600 px-3 py-2 text-sm text-white hover:bg-red-700 md:px-4"
+              >
+                Close
+              </button>
+
+            </div>
+
+            <div className="space-y-3 md:space-y-4">
 
 
           <div>
@@ -343,7 +362,7 @@ export default function SeasonManager({
             <input
               value={newSeason.year}
               placeholder="2033/34"
-              className="w-full rounded bg-[#1B2028] p-3"
+              className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
               onChange={(e) =>
                 setNewSeason({
                   ...newSeason,
@@ -368,7 +387,7 @@ export default function SeasonManager({
 
               value={newSeason.club}
 
-              className="w-full rounded bg-[#1B2028] p-3"
+              className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
 
               onChange={(e) => {
 
@@ -440,7 +459,7 @@ export default function SeasonManager({
 
               disabled
 
-              className="w-full rounded bg-[#1B2028] p-3 text-[#A0A7B4]"
+              className="w-full rounded bg-[#1B2028] p-2.5 text-[#A0A7B4] md:p-3"
 
             />
 
@@ -534,7 +553,7 @@ Individual Awards
 <input
 placeholder="Example: Golden Boot"
 id="awardInput"
-className="flex-1 rounded bg-[#1B2028] p-3"
+className="flex-1 rounded bg-[#1B2028] p-2.5 md:p-3"
 />
 
 
@@ -603,7 +622,7 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
               value={newSeason.matches}
 
-              className="w-full rounded bg-[#1B2028] p-3"
+              className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
 
               onChange={(e) =>
                 setNewSeason({
@@ -633,7 +652,7 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
               value={newSeason.goals}
 
-              className="w-full rounded bg-[#1B2028] p-3"
+              className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
 
               onChange={(e) =>
                 setNewSeason({
@@ -664,7 +683,7 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
               value={newSeason.assists}
 
-              className="w-full rounded bg-[#1B2028] p-3"
+              className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
 
               onChange={(e) =>
                 setNewSeason({
@@ -697,7 +716,7 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
               value={newSeason.rating}
 
-              className="w-full rounded bg-[#1B2028] p-3"
+              className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
 
               onChange={(e) =>
                 setNewSeason({
@@ -722,7 +741,7 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
               onClick={removeSeason}
 
-              className={`rounded-lg bg-red-600 px-4 py-2 font-semibold text-white hover:bg-red-700 ${
+              className={`rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white hover:bg-red-700 md:px-4 ${
                 editingIndex === null
                   ? "invisible"
                   : ""
@@ -742,7 +761,7 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
               onClick={saveSeason}
 
-              className="rounded-lg bg-[#2BA13D] px-4 py-2 font-semibold text-white hover:bg-[#248C35]"
+              className="rounded-lg bg-[#2BA13D] px-3 py-2 text-sm font-semibold text-white hover:bg-[#248C35] md:px-4"
 
             >
 
@@ -755,6 +774,10 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
           </div>
 
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -770,12 +793,9 @@ className="rounded-full bg-[#1B2028] px-3 py-1"
 
         onClick={() => {
 
-          setShowForm(!showForm);
-
-          if (showForm) {
-            setEditingIndex(null);
-            setNewSeason(emptySeason);
-          }
+          setEditingIndex(null);
+          setNewSeason(emptySeason);
+          setShowForm(true);
 
         }}
 
