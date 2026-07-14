@@ -19,31 +19,31 @@ seasons.flatMap((season)=>(
 
 return (
 
-<div className="space-y-5">
+<div className="space-y-4 md:space-y-5">
 
 
-<h2 className="text-3xl font-bold">
+<h2 className="text-xl font-bold md:text-3xl">
 🏅 Awards Cabinet
 </h2>
 
 
-<div className="grid gap-4 md:grid-cols-2">
+<div className="grid gap-3 md:grid-cols-2 md:gap-4">
 
 
 {awards.map((item,index)=>(
 
 <div
 key={index}
-className="rounded-xl bg-[#0F1318] p-5"
+className="rounded-xl bg-[#0F1318] p-4 md:p-5"
 >
 
 
-<h3 className="text-xl font-bold">
+<h3 className="truncate text-base font-bold md:text-xl">
 🏅 {item.award}
 </h3>
 
 
-<p className="text-[#A0A7B4]">
+<p className="truncate text-xs text-[#A0A7B4] md:text-base">
 {item.year} • {item.club}
 </p>
 

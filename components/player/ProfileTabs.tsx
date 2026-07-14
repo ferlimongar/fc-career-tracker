@@ -67,10 +67,10 @@ export default function ProfileTabs({
 
 
       {/* TAB CONTENT */}
-      <div className="mt-8 bg-[#1B2028] rounded-xl p-6">
+      <div className="mt-6 rounded-xl bg-[#1B2028] p-4 md:mt-8 md:p-6">
 
 
-        <h2 className="text-2xl font-bold text-white">
+        <h2 className="text-xl font-bold text-white md:text-2xl">
           {activeTab}
         </h2>
 

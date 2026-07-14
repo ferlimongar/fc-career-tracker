@@ -127,29 +127,29 @@ export default function International({
 
   return (
 
-    <div className="mt-6 space-y-6">
+    <div className="mt-4 space-y-4 md:mt-6 md:space-y-6">
 
 
       {/* National Summary */}
 
-      <div className="rounded-xl bg-[#0F1318] p-6">
+      <div className="rounded-xl bg-[#0F1318] p-4 md:p-6">
 
 
-        <h3 className="text-2xl font-bold">
+        <h3 className="text-xl font-bold md:text-2xl">
           {international.country}
         </h3>
 
 
-        <div className="mt-5 flex gap-10">
+        <div className="mt-4 grid grid-cols-3 gap-3 md:mt-5 md:flex md:gap-10">
 
 
           <div>
 
-            <p className="text-3xl font-bold">
+            <p className="text-2xl font-bold md:text-3xl">
             {internationalTotals.apps}
             </p>
 
-            <p className="text-[#A0A7B4]">
+            <p className="text-xs text-[#A0A7B4] md:text-base">
               Caps
             </p>
 
@@ -159,11 +159,11 @@ export default function International({
 
           <div>
 
-            <p className="text-3xl font-bold">
+            <p className="text-2xl font-bold md:text-3xl">
             {internationalTotals.goals}
             </p>
 
-            <p className="text-[#A0A7B4]">
+            <p className="text-xs text-[#A0A7B4] md:text-base">
               Goals
             </p>
 
@@ -171,11 +171,11 @@ export default function International({
 
 <div>
 
-            <p className="text-3xl font-bold">
+            <p className="text-2xl font-bold md:text-3xl">
             {internationalTotals.assists}
             </p>
 
-            <p className="text-[#A0A7B4]">
+            <p className="text-xs text-[#A0A7B4] md:text-base">
               Assists
             </p>
 
@@ -191,7 +191,7 @@ export default function International({
       {/* Tournament History */}
 
 
-      <div className="space-y-5">
+      <div className="space-y-4 md:space-y-5">
 
 
         {tournaments.map((tournament, index) => (
@@ -199,17 +199,17 @@ export default function International({
 
           <div
             key={`${tournament.name}-${tournament.year}`}
-            className="rounded-xl bg-[#0F1318] p-6"
+            className="rounded-xl bg-[#0F1318] p-4 md:p-6"
           >
 
 
-            <div className="flex justify-between items-start">
+            <div className="flex items-start justify-between gap-2">
 
 
-              <div>
+              <div className="min-w-0">
 
 
-                <h3 className="text-xl font-bold">
+                <h3 className="truncate text-base font-bold md:text-xl">
                   {tournament.year} {tournament.name}
                 </h3>
 
@@ -218,10 +218,10 @@ export default function International({
 
 
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-shrink-0 items-center gap-2 md:gap-3">
 
 
-                <p className="font-bold text-[#2BA13D]">
+                <p className="max-w-20 truncate text-xs font-bold text-[#2BA13D] md:max-w-none md:text-base">
                   🏆 {tournament.result}
                 </p>
 
@@ -237,7 +237,7 @@ export default function International({
                     setShowForm(true);
 
                   }}
-                  className="rounded-md bg-[#2BA13D] px-3 py-1 text-sm font-medium text-white hover:bg-[#248C35]"
+                  className="rounded-md bg-[#2BA13D] px-2 py-1 text-xs font-medium text-white hover:bg-[#248C35] md:px-3 md:text-sm"
                 >
                   Edit
                 </button>
@@ -252,16 +252,16 @@ export default function International({
 
 
 
-            <div className="mt-6 grid grid-cols-3 text-center">
+            <div className="mt-4 grid grid-cols-3 text-center md:mt-6">
 
 
               <div>
 
-                <p className="text-2xl font-bold">
+                <p className="text-xl font-bold md:text-2xl">
                   {tournament.apps}
                 </p>
 
-                <p className="text-[#A0A7B4]">
+                <p className="text-xs text-[#A0A7B4] md:text-base">
                   Apps
                 </p>
 
@@ -271,11 +271,11 @@ export default function International({
 
               <div>
 
-                <p className="text-2xl font-bold">
+                <p className="text-xl font-bold md:text-2xl">
                   {tournament.goals}
                 </p>
 
-                <p className="text-[#A0A7B4]">
+                <p className="text-xs text-[#A0A7B4] md:text-base">
                   Goals
                 </p>
 
@@ -285,11 +285,11 @@ export default function International({
 
               <div>
 
-                <p className="text-2xl font-bold">
+                <p className="text-xl font-bold md:text-2xl">
                   {tournament.assists}
                 </p>
 
-                <p className="text-[#A0A7B4]">
+                <p className="text-xs text-[#A0A7B4] md:text-base">
                   Assists
                 </p>
 
@@ -317,13 +317,13 @@ export default function International({
 
       {showForm && (
 
-        <div className="rounded-xl bg-[#0F1318] p-6 space-y-3">
+        <div className="rounded-xl bg-[#0F1318] p-4 space-y-2.5 md:p-6 md:space-y-3">
 
 
           <input
             value={newTournament.year}
             placeholder="Year (ex. 2034)"
-            className="w-full rounded bg-[#1B2028] p-3"
+            className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
             onChange={(e)=>
               setNewTournament({
                 ...newTournament,
@@ -337,7 +337,7 @@ export default function International({
           <input
             value={newTournament.name}
             placeholder="Competition"
-            className="w-full rounded bg-[#1B2028] p-3"
+            className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
             onChange={(e)=>
               setNewTournament({
                 ...newTournament,
@@ -351,7 +351,7 @@ export default function International({
           <input
             value={newTournament.result}
             placeholder="Result"
-            className="w-full rounded bg-[#1B2028] p-3"
+            className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
             onChange={(e)=>
               setNewTournament({
                 ...newTournament,
@@ -366,7 +366,7 @@ export default function International({
             value={newTournament.apps}
             type="number"
             placeholder="Apps"
-            className="w-full rounded bg-[#1B2028] p-3"
+            className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
             onChange={(e)=>
               setNewTournament({
                 ...newTournament,
@@ -381,7 +381,7 @@ export default function International({
             value={newTournament.goals}
             type="number"
             placeholder="Goals"
-            className="w-full rounded bg-[#1B2028] p-3"
+            className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
             onChange={(e)=>
               setNewTournament({
                 ...newTournament,
@@ -396,7 +396,7 @@ export default function International({
             value={newTournament.assists}
             type="number"
             placeholder="Assists"
-            className="w-full rounded bg-[#1B2028] p-3"
+            className="w-full rounded bg-[#1B2028] p-2.5 md:p-3"
             onChange={(e)=>
               setNewTournament({
                 ...newTournament,
@@ -408,14 +408,14 @@ export default function International({
 
 
 
-          <div className="flex justify-between pt-3">
+          <div className="flex justify-between pt-2 md:pt-3">
 
 
             {editingIndex !== null && (
 
               <button
                 onClick={removeTournament}
-                className="rounded-md bg-red-600 px-3 py-2 text-sm font-medium text-white"
+                className="rounded-md bg-red-600 px-3 py-2 text-xs font-medium text-white md:text-sm"
               >
                 Remove
               </button>
@@ -427,7 +427,7 @@ export default function International({
 
             <button
               onClick={saveTournament}
-              className="ml-auto rounded-lg bg-[#2BA13D] px-4 py-2 font-semibold text-white"
+              className="ml-auto rounded-lg bg-[#2BA13D] px-3 py-2 text-sm font-semibold text-white md:px-4"
             >
               {editingIndex !== null
                 ? "Update Tournament"

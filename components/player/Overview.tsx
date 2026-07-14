@@ -17,14 +17,14 @@ export default function Overview({
   return (
     <>
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-3xl font-bold text-white">
+      <div className="mb-4 flex items-center justify-between md:mb-6">
+        <h2 className="text-xl font-bold text-white md:text-3xl">
           Player Overview
         </h2>
 
         <button
           onClick={() => setEditing(true)}
-          className="rounded-lg bg-[#2BA13D] px-4 py-2 font-semibold text-white transition hover:bg-[#248C35]"
+          className="rounded-lg bg-[#2BA13D] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#248C35] md:px-4"
         >
           Edit Profile
         </button>
@@ -39,16 +39,16 @@ export default function Overview({
   />
 )}
 
-      <div className="space-y-6">
+      <div className="space-y-4 md:space-y-6">
 
         {/* Career Highlights */}
-        <div className="rounded-xl bg-[#1B2028] p-6">
+        <div className="rounded-xl bg-[#1B2028] p-4 md:p-6">
 
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-xl font-bold text-white md:text-2xl">
             Career Highlights
           </h2>
 
-          <div className="mt-4 space-y-3">
+          <div className="mt-3 space-y-2 text-sm md:mt-4 md:space-y-3 md:text-base">
 
             {(player.highlights ?? []).map((highlight: string) => (
               <div
@@ -64,13 +64,13 @@ export default function Overview({
         </div>
 
         {/* Current Club */}
-        <div className="rounded-xl bg-[#1B2028] p-6">
+        <div className="rounded-xl bg-[#1B2028] p-4 md:p-6">
 
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-xl font-bold text-white md:text-2xl">
             Current Club
           </h2>
 
-          <div className="mt-4 space-y-2 text-[#A0A7B4]">
+          <div className="mt-3 space-y-1.5 text-sm text-[#A0A7B4] md:mt-4 md:space-y-2 md:text-base">
 
             <p>
               Club: <span className="text-white">{player.club}</span>
