@@ -91,13 +91,12 @@ useEffect(() => {
 
 
   return (
-    <main className="min-h-screen bg-[#0B0D10] p-10 text-white">
-
+    <main className="min-h-screen bg-[#0B0D10] p-4 md:p-10 text-white">
 
       {/* PLAYER HEADER */}
       <section className="rounded-xl bg-[#1B2028] p-8">
 
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
 
           {/* LEFT SIDE */}
@@ -105,11 +104,12 @@ useEffect(() => {
 
 
             <Image
-              src={playerData.clubCrest}
-              alt={playerData.club}
-              width={90}
-              height={90}
-            />
+            src={playerData.clubCrest}
+            alt={playerData.club}
+            width={90}
+            height={90}
+            className="h-[70px] w-[70px] md:h-[90px] md:w-[90px]"
+/>
 
 
             <div>
@@ -126,7 +126,7 @@ useEffect(() => {
                 />
 
 
-                <h1 className="text-5xl font-bold">
+                <h1 className="text-3xl md:text-5xl font-bold">
                   {playerData.name}
                 </h1>
 
@@ -139,7 +139,7 @@ useEffect(() => {
               </p>
 
 
-              <div className="mt-5 flex gap-8 text-[#A0A7B4]">
+              <div className="mt-5 grid grid-cols-2 gap-4 text-[#A0A7B4] md:flex md:gap-8">
 
 
                 <div>
@@ -209,7 +209,7 @@ useEffect(() => {
 
 
           {/* OVERALL */}
-          <div className="flex h-28 w-28 flex-col items-center justify-center rounded-xl border-2 border-[#2BA13D]">
+          <div className="flex h-24 w-24 md:h-28 md:w-28 flex-col items-center justify-center self-center">
 
 
             <p className="text-5xl font-bold text-[#2BA13D]">

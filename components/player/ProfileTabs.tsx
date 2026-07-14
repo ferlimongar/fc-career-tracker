@@ -42,8 +42,7 @@ export default function ProfileTabs({
 
 
       {/* TAB BUTTONS */}
-      <div className="flex gap-3 border-b border-[#2C323D] overflow-x-auto">
-
+        <div className="flex gap-3 overflow-x-auto border-b border-[#2C323D] whitespace-nowrap">
 
         {tabs.map((tab) => (
 

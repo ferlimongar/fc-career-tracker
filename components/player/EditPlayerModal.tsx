@@ -42,8 +42,7 @@ export default function EditPlayerModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-      <div className="w-full max-w-3xl rounded-2xl bg-[#1B2028] p-8 shadow-2xl">
-
+      <div className="w-[95%] max-w-3xl rounded-2xl bg-[#1B2028] p-8 shadow-2xl">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-3xl font-bold text-white">
@@ -58,7 +57,7 @@ export default function EditPlayerModal({
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
 
           {/* Name */}
           <div>
