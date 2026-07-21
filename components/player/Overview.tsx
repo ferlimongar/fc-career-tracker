@@ -41,26 +41,41 @@ export default function Overview({
 
       <div className="space-y-4 md:space-y-6">
 
-        {/* Career Highlights */}
+        {/* Player Details */}
         <div className="rounded-xl bg-[#1B2028] p-4 md:p-6">
-
           <h2 className="text-xl font-bold text-white md:text-2xl">
-            Career Highlights
+            Player Details
           </h2>
 
-          <div className="mt-3 space-y-2 text-sm md:mt-4 md:space-y-3 md:text-base">
-
-            {(player.highlights ?? []).map((highlight: string) => (
-              <div
-                key={highlight}
-                className="text-[#A0A7B4]"
-              >
-                🏆 {highlight}
-              </div>
-            ))}
-
-          </div>
-
+          <dl className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            <div className="rounded-lg bg-[#0F1318] p-3">
+              <dt className="text-xs text-[#A0A7B4]">Height</dt>
+              <dd className="mt-1 font-semibold text-white">{player.playerInfo.height}</dd>
+            </div>
+            <div className="rounded-lg bg-[#0F1318] p-3">
+              <dt className="text-xs text-[#A0A7B4]">Age</dt>
+              <dd className="mt-1 font-semibold text-white">{player.playerInfo.age}</dd>
+              <p className="mt-1 text-xs text-[#A0A7B4]">
+                {player.playerInfo.birthday || "Birthday not set"}
+              </p>
+            </div>
+            <div className="rounded-lg bg-[#0F1318] p-3">
+              <dt className="text-xs text-[#A0A7B4]">Country</dt>
+              <dd className="mt-1 font-semibold text-white">{player.nationality}</dd>
+            </div>
+            <div className="rounded-lg bg-[#0F1318] p-3">
+              <dt className="text-xs text-[#A0A7B4]">Shirt Number</dt>
+              <dd className="mt-1 font-semibold text-white">#{player.playerInfo.shirt}</dd>
+            </div>
+            <div className="rounded-lg bg-[#0F1318] p-3">
+              <dt className="text-xs text-[#A0A7B4]">Preferred Foot</dt>
+              <dd className="mt-1 font-semibold text-white">{player.playerInfo.foot}</dd>
+            </div>
+            <div className="rounded-lg bg-[#0F1318] p-3">
+              <dt className="text-xs text-[#A0A7B4]">Transfer Value</dt>
+              <dd className="mt-1 font-semibold text-white">{player.playerInfo.value}</dd>
+            </div>
+          </dl>
         </div>
 
         {/* Current Club */}
@@ -78,20 +93,6 @@ export default function Overview({
 
             <p>
               Position: <span className="text-white">{player.position}</span>
-            </p>
-
-            <p>
-              Shirt Number:{" "}
-              <span className="text-white">
-                #{player.playerInfo.shirt}
-              </span>
-            </p>
-
-            <p>
-              Preferred Foot:{" "}
-              <span className="text-white">
-                {player.playerInfo.foot}
-              </span>
             </p>
 
             <p>

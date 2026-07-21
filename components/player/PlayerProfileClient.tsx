@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";import Image from "next/image";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import ProfileTabs from "./ProfileTabs";
 import { calculateCareerStats } from "@/utils/careerStats";
 
@@ -92,6 +94,13 @@ useEffect(() => {
 
   return (
     <main className="min-h-screen bg-[#0B0D10] p-4 md:p-10 text-white">
+
+      <Link
+        href="/"
+        className="mb-4 inline-flex items-center rounded-md border border-[#2C323D] px-3 py-2 text-sm font-medium text-[#A0A7B4] transition hover:border-[#2BA13D] hover:text-white md:mb-6"
+      >
+        ← Back to home
+      </Link>
 
       {/* PLAYER HEADER */}
       <section className="rounded-xl bg-[#1B2028] p-3 md:p-8">
@@ -230,10 +239,6 @@ useEffect(() => {
 
 
       </section>
-
-
-
-
 
       {/* CAREER STATS */}
       <section className="mt-8">

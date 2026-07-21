@@ -1,32 +1,29 @@
-import Navbar from "@/components/layout/Navbar";
 import CareerCard from "@/components/career/CareerCard";
 import { careers } from "@/data/careers";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen bg-[#0B0D10]">
-      <Navbar />
-
-      <section className="flex-1 p-10">
-        <div className="flex items-center justify-between">
+    <main className="min-h-screen bg-[#0B0D10] p-4 sm:p-6 md:p-10">
+      <section className="mx-auto w-full max-w-7xl">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 
           <div>
-            <h2 className="text-4xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Career Library
             </h2>
 
-            <p className="mt-3 text-[#A0A7B4]">
+            <p className="mt-2 text-sm text-[#A0A7B4] sm:mt-3 sm:text-base">
               Manage your EA FC player careers.
             </p>
           </div>
 
-          <button className="rounded-lg bg-[#2BA13D] px-5 py-3 font-semibold text-white hover:bg-[#248C35] transition">
+          <button className="self-start rounded-lg bg-[#2BA13D] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#248C35] sm:px-5 sm:py-3 sm:text-base">
             + New Career
           </button>
 
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-6 md:gap-6 xl:grid-cols-3">
           {careers.map((career) => (
             <CareerCard
               key={career.id}

@@ -36,7 +36,7 @@ export const clubs = [
     country: "USA",
   },
   {
-    name: "FC Coppenhagen",
+    name: "FC København",
     crest: "/clubs/coppenhagen.png",
     league: "Superliga",
     country: "Denmark",

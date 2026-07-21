@@ -1,10 +1,6 @@
 "use client";
 
-type Season = {
-  year: string;
-  club: string;
-  trophies?: string[];
-};
+import type { Season } from "@/types/season";
 
 
 export default function TrophyCabinet({

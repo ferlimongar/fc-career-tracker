@@ -1,4 +1,6 @@
-export function calculateCareerStats(seasons: any[]) {
+import type { Season } from "@/types/season";
+
+export function calculateCareerStats(seasons: Season[]) {
   return {
     matches: seasons.reduce(
       (total, season) => total + season.matches,

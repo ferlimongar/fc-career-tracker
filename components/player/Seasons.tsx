@@ -1,16 +1,5 @@
 import Image from "next/image";
-
-type Season = {
-  year: string;
-  club: string;
-  clubCrest: string;
-  league: string;
-  matches: number;
-  goals: number;
-  assists: number;
-  rating: number;
-  trophies: string[];
-};
+import type { Season } from "@/types/season";
 
 
 export default function Seasons({

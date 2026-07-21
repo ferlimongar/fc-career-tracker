@@ -181,6 +181,22 @@ export default function EditPlayerModal({
             />
           </div>
 
+          {/* Birthday */}
+          <div>
+            <label className="mb-1 block text-sm text-[#A0A7B4]">
+              Birthday
+            </label>
+
+            <input
+              type="date"
+              value={player.playerInfo.birthday ?? ""}
+              onChange={(e) =>
+                updatePlayerInfo("birthday", e.target.value)
+              }
+              className="w-full rounded bg-[#0F1318] p-2.5 md:p-3"
+            />
+          </div>
+
           {/* Shirt */}
           <div>
             <label className="mb-1 block text-sm text-[#A0A7B4]">
